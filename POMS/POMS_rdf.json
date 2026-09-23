@@ -1,0 +1,356 @@
+{
+  "GN_02201.031": {
+    "title": "Collection of Title II Overpayments by Administrative Offset",
+    "triples": {
+
+      "GN_02201.031_A_1": [
+        {
+          "subject": "Domestic Employment Reform Act of 1994",
+          "predicate": "authorizes",
+          "object": "Administrative Offset",
+          "object_type": "entity"
+        },
+        {
+          "subject": "Domestic Employment Reform Act of 1994",
+          "predicate": "aliasOf",
+          "object": "DERA",
+          "object_type": "literal"
+        },
+        {
+          
+        },
+        {
+          "subject": "Social Security Administration",
+          "predicate": "aliasOf",
+          "object": "SSA",
+          "object_type": "literal"
+        },
+        {
+          "subject": "Debt Collection Improvement Act of 1996",
+          "predicate": "grants",
+          "object": "permanent authority to use Administrative Offset",
+          "object_type": "literal"
+        },
+        {
+          "subject": "Debt Collection Improvement Act of 1996",
+          "predicate": "aliasOf",
+          "object": "DCIA",
+          "object_type": "literal"
+        },
+        {
+          "subject": "Administrative Offset",
+          "predicate": "definedAs",
+          "object": "reduction or withholding of Federal or State payments other than tax refunds",
+          "object_type": "literal"
+        },
+        {
+          "subject": "Tax Refund Offset",
+          "predicate": "isTypeOf",
+          "object": "Administrative Offset",
+          "object_type": "entity"
+        },
+        {
+          "subject": "Tax Refund Offset",
+          "predicate": "aliasOf",
+          "object": "TRO",
+          "object_type": "literal"
+        },
+        {
+          "subject": "Tax Refund Offset",
+          "predicate": "proceduresIn",
+          "object": "GN_02201.030",
+          "object_type": "reference"
+        }
+      ],
+
+      "GN_02201.031_A_2": [
+        {
+          "subject": "Administrative Offset",
+          "predicate": "definedAs",
+          "object": "reduction or withholding of federal or state payments to recover a delinquent debt owed to the federal government",
+          "object_type": "literal"
+        },
+        {
+          "subject": "OPM pensions",
+          "predicate": "subjectTo",
+          "object": "Administrative Offset",
+          "object_type": "entity"
+        },
+        {
+          "subject": "OPM pensions",
+          "predicate": "maxReduction",
+          "object": "25%",
+          "object_type": "literal"
+        },
+        {
+          "subject": "federal contractor payments",
+          "predicate": "subjectTo",
+          "object": "Administrative Offset",
+          "object_type": "entity"
+        },
+        {
+          "subject": "federal contractor payments",
+          "predicate": "maxReduction",
+          "object": "100%",
+          "object_type": "literal"
+        },
+        {
+          "subject": "travel and expense reimbursements",
+          "predicate": "subjectTo",
+          "object": "Administrative Offset",
+          "object_type": "entity"
+        },
+        {
+          "subject": "travel and expense reimbursements",
+          "predicate": "maxReduction",
+          "object": "100%",
+          "object_type": "literal"
+        },
+        {
+          "subject": "state income tax refunds",
+          "predicate": "subjectTo",
+          "object": "Administrative Offset",
+          "object_type": "entity"
+        },
+        {
+          "subject": "Title XVI debts",
+          "predicate": "proceduresIn",
+          "object": "SI_02220.013",
+          "object_type": "reference"
+        }
+      ],
+
+      "GN_02201.031_A_3": [
+        {
+          "subject": "Administrative Offset",
+          "predicate": "requiresCriterion",
+          "object": "debtor aged 18 or older when debt incurred",
+          "object_type": "literal",
+          "criterion_id": "a"
+        },
+        {
+          "subject": "Administrative Offset",
+          "predicate": "requiresCriterion",
+          "object": "debt is unrecoverable under Commissioner regulations", #debtor_age_at_debt
+          "object_type": "literal",
+          "criterion_id": "b"
+        },
+        {
+          "subject": "Administrative Offset",
+          "predicate": "requiresCriterion",
+          "object": "debtor no longer entitled to Social Security benefits",
+          "object_type": "literal",
+          "criterion_id": "c"
+        },
+        {
+          "subject": "Administrative Offset",
+          "predicate": "requiresCriterion",
+          "object": "debtor must be alive",
+          "object_type": "literal",
+          "criterion_id": "d"
+        },
+        {
+          "subject": "Administrative Offset",
+          "predicate": "requiresCriterion",
+          "object": "BOAN must be on Master Beneficiary Record",
+          "object_type": "literal",
+          "criterion_id": "e"
+        },
+        {
+          "subject": "Administrative Offset",
+          "predicate": "minimumDebtAmount",
+          "object": "25.00",
+          "object_type": "decimal",
+          "criterion_id": "f"
+        },
+        {
+          "subject": "Administrative Offset",
+          "predicate": "requiresCriterion",
+          "object": "debt must be delinquent",
+          "object_type": "literal",
+          "criterion_id": "g"
+        },
+        {
+          "subject": "delinquent",
+          "predicate": "definedIn",
+          "object": "GN_02201.030_B_2",
+          "object_type": "reference"
+        },
+        {
+          "subject": "Administrative Offset",
+          "predicate": "excludes",
+          "object": "BIC C debtors for payments other than TRO",
+          "object_type": "literal"
+        }
+      ],
+
+      "GN_02201.031_B_1": [
+        {
+          "subject": "unrecoverable debt",
+          "predicate": "requiresCondition",
+          "object": "RECOOP billing status is past-due or later, or debt written off as uncollectible",
+          "object_type": "literal",
+          "condition_id": "a"
+        },
+        {
+          "subject": "unrecoverable debt",
+          "predicate": "requiresCondition",
+          "object": "no installment agreement, or debtor missed two consecutive monthly payments",
+          "object_type": "literal",
+          "condition_id": "b"
+        },
+        {
+          "subject": "unrecoverable debt",
+          "predicate": "requiresCondition",
+          "object": "no pending appeal or waiver request",
+          "object_type": "literal",
+          "condition_id": "c"
+        },
+        {
+          "subject": "unrecoverable debt",
+          "predicate": "requiresCondition",
+          "object": "debtor is a former beneficiary",
+          "object_type": "literal",
+          "condition_id": "d"
+        },
+        {
+          "subject": "RECOOP",
+          "predicate": "aliasOf",
+          "object": "Recovery and Collection of Overpayment Process",
+          "object_type": "literal"
+        }
+      ],
+
+      "GN_02201.031_B_2": [
+        {
+          "subject": "unrecoverable debt",
+          "predicate": "definedIn",
+          "object": "GN_02201.031_B_1",
+          "object_type": "reference"
+        },
+        {
+          "subject": "Administrative Offset",
+          "predicate": "doesNotRequire",
+          "object": "specific unrecoverable date",
+          "object_type": "literal"
+        }
+      ],
+
+      "GN_02201.031_C": [
+        {
+          "subject": "Administrative Offset",
+          "predicate": "requires",
+          "object": "pre-offset notice to debtor",
+          "object_type": "literal"
+        },
+        {
+          "subject": "ECO",
+          "predicate": "retrievesAddressFrom",
+          "object": "Address Verification Contractor",
+          "object_type": "entity"
+        },
+        {
+          "subject": "Address Verification Contractor",
+          "predicate": "aliasOf",
+          "object": "AVC",
+          "object_type": "literal"
+        },
+        {
+          "subject": "pre-offset notice",
+          "predicate": "informs",
+          "object": "delinquent overpayment debt amount",
+          "object_type": "literal"
+        },
+        {
+          "subject": "pre-offset notice",
+          "predicate": "informs",
+          "object": "planned referral to Treasury for TOP",
+          "object_type": "literal"
+        },
+        {
+          "subject": "pre-offset notice",
+          "predicate": "informs",
+          "object": "60-day period to pay, arrange installments, request waiver, or furnish evidence",
+          "object_type": "literal"
+        },
+        {
+          "subject": "pre-offset notice",
+          "predicate": "informs",
+          "object": "right to review and copy SSA records",
+          "object_type": "literal"
+        },
+        {
+          "subject": "pre-offset notice",
+          "predicate": "fallbackAddress",
+          "object": "MBR or SSR if updated within last year",
+          "object_type": "literal"
+        },
+        {
+          "subject": "MBR",
+          "predicate": "aliasOf",
+          "object": "Master Beneficiary Record",
+          "object_type": "literal"
+        },
+        {
+          "subject": "SSR",
+          "predicate": "aliasOf",
+          "object": "Supplemental Security Record",
+          "object_type": "literal"
+        }
+      ],
+
+      "GN_02201.031_D_2": [
+        {
+          "subject": "Administrative Offset",
+          "predicate": "authorizedBy",
+          "object": "Congress",
+          "object_type": "entity"
+        },
+        {
+          "subject": "Treasury",
+          "predicate": "withholds",
+          "object": "unrecoverable SSA overpayments from federal and state payments",
+          "object_type": "literal"
+        }
+      ],
+
+      "GN_02201.031_D_8": [
+        {
+          "subject": "compromise offer",
+          "predicate": "proceduresIn",
+          "object": "GN_02215.100",
+          "object_type": "reference"
+        },
+        {
+          "subject": "compromise offer",
+          "predicate": "proceduresIn",
+          "object": "GN_02215.125",
+          "object_type": "reference"
+        },
+        {
+          "subject": "compromise offer",
+          "predicate": "requiresPaymentBefore",
+          "object": "60-day process period expiration",
+          "object_type": "literal"
+        }
+      ],
+
+      "GN_02201.031_D_1":  [{"subject": "GN_02201.031_D_1",  "predicate": "refersTo", "object": "GN_02201.030_D_1",  "object_type": "reference"}],
+      "GN_02201.031_D_3":  [{"subject": "GN_02201.031_D_3",  "predicate": "refersTo", "object": "GN_02201.030_D_2",  "object_type": "reference"}],
+      "GN_02201.031_D_4":  [{"subject": "GN_02201.031_D_4",  "predicate": "refersTo", "object": "GN_02201.030_D_3",  "object_type": "reference"}],
+      "GN_02201.031_D_5":  [{"subject": "GN_02201.031_D_5",  "predicate": "refersTo", "object": "GN_02201.030_D_4",  "object_type": "reference"}],
+      "GN_02201.031_D_6_a":[{"subject": "GN_02201.031_D_6_a","predicate": "refersTo", "object": "GN_02201.030_D_5_a","object_type": "reference"}],
+      "GN_02201.031_D_6_b":[{"subject": "GN_02201.031_D_6_b","predicate": "refersTo", "object": "GN_02201.030_D_5_b","object_type": "reference"}],
+      "GN_02201.031_D_7":  [{"subject": "GN_02201.031_D_7",  "predicate": "refersTo", "object": "GN_02201.030_D_6",  "object_type": "reference"}],
+      "GN_02201.031_D_9":  [{"subject": "GN_02201.031_D_9",  "predicate": "refersTo", "object": "GN_02201.030_D_8",  "object_type": "reference"}],
+      "GN_02201.031_D_10": [{"subject": "GN_02201.031_D_10", "predicate": "refersTo", "object": "GN_02201.030_D_9",  "object_type": "reference"}],
+      "GN_02201.031_D_11": [{"subject": "GN_02201.031_D_11", "predicate": "refersTo", "object": "GN_02201.030_D_10", "object_type": "reference"}],
+      "GN_02201.031_E_1":  [{"subject": "GN_02201.031_E_1",  "predicate": "refersTo", "object": "GN_02201.030_E_1",  "object_type": "reference"}],
+      "GN_02201.031_E_2":  [{"subject": "GN_02201.031_E_2",  "predicate": "refersTo", "object": "GN_02201.030_E_2",  "object_type": "reference"}],
+      "GN_02201.031_E_3":  [{"subject": "GN_02201.031_E_3",  "predicate": "refersTo", "object": "GN_02201.030_E_3",  "object_type": "reference"}],
+      "GN_02201.031_E_4":  [{"subject": "GN_02201.031_E_4",  "predicate": "refersTo", "object": "GN_02201.030_E_4",  "object_type": "reference"}],
+      "GN_02201.031_E_5":  [{"subject": "GN_02201.031_E_5",  "predicate": "refersTo", "object": "GN_02201.030_E_5",  "object_type": "reference"}],
+      "GN_02201.031_E_6":  [{"subject": "GN_02201.031_E_6",  "predicate": "refersTo", "object": "GN_02201.030_G_2",  "object_type": "reference"}]
+    }
+  }
+}

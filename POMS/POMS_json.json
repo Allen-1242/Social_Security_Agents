@@ -1,0 +1,233 @@
+{
+  "GN_02201.031": {
+    "title": "Collection of Title II Overpayments by Administrative Offset",
+    "effective_from": "05/08/2025",
+    "effective_to": "Present",
+    "transmittal": "TN 78 (05-25)",
+    "batch_run": "05/14/2025",
+    "revision": "05/08/2025",
+    "url": "http://policy.ssa.gov/poms.nsf/lnx/0202201031",
+    "prev": "GN_02201.030",
+    "next": "GN_02201.032",
+    "sections": {
+
+      "GN_02201.031_A": {
+        "header": "What is the policy for collecting Title II overpayments by Administrative Offset?",
+        "subsections": {
+
+          "GN_02201.031_A_1": {
+            "header": "Authority for Administrative Offset",
+            "text": "The Domestic Employment Reform Act of 1994 (DERA) authorizes the Social Security Administration (SSA) to collect certain Title II debts by Administrative Offset. In addition, the Debt Collection Improvement Act of 1996 (DCIA) gives SSA permanent authority to use administrative offset.",
+            "note": "In this section, the term 'Administrative Offset' refers to the reduction or withholding of Federal or State payments other than tax refunds. Although Tax Refund Offset (TRO) is a type of Administrative Offset, separate TRO procedures regarding Title II overpayment debts appear in GN 02201.030.",
+            "links": ["GN_02201.030"]
+          },
+
+          "GN_02201.031_A_2": {
+            "header": "Definition of Administrative Offset",
+            "text": "Administrative Offset is the reduction or withholding of federal or state payments to a person to recover a delinquent debt owed by that person to the federal government. Various federal and state payments, such as travel, expense reimbursements, Office of Personnel Management (OPM) pensions, and federal contractor payments, as well as eligible state payments, which include state income tax refunds, are subject to Administrative Offset to recover certain Title II debts. OPM pensions are subject to a reduction of up to 25% of the net payment. Vendor payments such as federal contractor payments and travel and expense reimbursements are subject to a reduction of up to 100% of the net payment.",
+            "note": "For Title XVI debts collected by administrative offset of Federal payments, see SI 02220.013.",
+            "links": ["SI_02220.013"]
+          },
+
+          "GN_02201.031_A_3": {
+            "header": "Criteria for Administrative Offset selection",
+            "text": "SSA's automated systems select certain Title II debts for recovery by Administrative Offset. The following criteria must all apply:",
+            "criteria": [
+              {"id": "a", "text": "The debtor was 18 years or older when the debt was incurred"},
+              {"id": "b", "text": "The debt must be 'unrecoverable' under regulations determined by the Commissioner of Social Security"},
+              {"id": "c", "text": "The debt must be owed by a person who is no longer entitled to receive Social Security benefits"},
+              {"id": "d", "text": "The debtor must be alive"},
+              {"id": "e", "text": "The debtor's beneficiary own account number (BOAN) must be on the Master Beneficiary Record (MBR)"},
+              {"id": "f", "text": "The debt must be $25.00 or more"},
+              {"id": "g", "text": "The debt must be delinquent"}
+            ],
+            "note": "Due to systems limitations, SSA does not select beneficiary identification code (BIC) 'C' debtors for Administrative Offset of payments other than Tax Refund Offset (TRO).",
+            "links": ["GN_02201.030_B_2"]
+          }
+        }
+      },
+
+      "GN_02201.031_B": {
+        "header": "What is the policy for unrecoverable debt?",
+        "subsections": {
+
+          "GN_02201.031_B_1": {
+            "header": "Definition of unrecoverable debt",
+            "text": "SSA considers a Title II debt to be unrecoverable if it meets all the following conditions:",
+            "criteria": [
+              {"id": "a", "text": "The Recovery and Collection of Overpayment Process (RECOOP) billing status is past-due or later, or the debt has been written off as uncollectible"},
+              {"id": "b", "text": "SSA has not entered into an installment agreement with the debtor, or the debtor has failed to make any payment for two consecutive months"},
+              {"id": "c", "text": "No appeal or waiver request is pending"},
+              {"id": "d", "text": "The debtor is a former beneficiary"}
+            ],
+            "links": []
+          },
+
+          "GN_02201.031_B_2": {
+            "header": "When a debt is unrecoverable",
+            "text": "An SSA debt is unrecoverable when it meets the definition in GN 02201.031 B.1. For purposes of the Administrative Offset program, a specific unrecoverable date is not required.",
+            "links": ["GN_02201.031_B_1"]
+          }
+        }
+      },
+
+      "GN_02201.031_C": {
+        "header": "What is the process for sending a pre-offset notice?",
+        "text": "Once a debt is selected for Administrative Offset, SSA must send the debtor a preoffset notice. ECO retrieves a verified address for the debtor from an Address Verification Contractor (AVC).",
+        "subsections": {
+
+          "GN_02201.031_C_1": {
+            "header": "Address verification step 1",
+            "text": "If the AVC provides a good address, then the pre-offset notice is mailed to that address.",
+            "links": []
+          },
+
+          "GN_02201.031_C_2": {
+            "header": "Address verification step 2",
+            "text": "If the AVC does not return a good address and the MBR or Supplemental Security Record (SSR) was updated within the last year, the notice is mailed to the address on the MBR or SSR.",
+            "links": []
+          },
+
+          "GN_02201.031_C_3": {
+            "header": "Address verification step 3",
+            "text": "If there is no good address from the AVC and the MBR or SSR address was updated more than a year ago, the AVC will be checked again in six months. The preoffset notice will be mailed once a good address is obtained.",
+            "links": ["GN_02201.030_F", "GN_02201.029_C"]
+          }
+        },
+        "notice_contents": [
+          "They owe a delinquent overpayment debt in a particular amount",
+          "SSA plans to refer the debt to Treasury for TOP and if applicable conduct administrative wage garnishment, and send information about the debt to credit bureaus after 60 days have expired from the date on the notice",
+          "SSA will not take this action if, before the end of that 60-day period, the debtor pays the debt in full, makes regular installment payments under an agreement with SSA, requests waiver, or furnishes evidence showing that they do not owe all or part of the stated amount or SSA does not have the right to collect the debt",
+          "The debtor may review and copy SSA's records about the debt"
+        ],
+        "note": "SSA sends one notice to inform the debtor about TOP, TRO, administrative wage garnishment, and credit bureau reporting.",
+        "links": ["GN_02201.030"]
+      },
+
+      "GN_02201.031_D": {
+        "header": "How must debtor inquiries and protests, preoffset, be handled?",
+        "subsections": {
+
+          "GN_02201.031_D_1": {
+            "header": "Request for explanation of overpayment",
+            "text": "Follow the instructions in GN 02201.030 D.1.",
+            "links": ["GN_02201.030_D_1"]
+          },
+
+          "GN_02201.031_D_2": {
+            "header": "Request for explanation of Administrative Offset",
+            "text": "If a request for an explanation of Administrative Offset is received, explain that as indicated in the preoffset notice, Congress passed a law that allows Treasury to withhold unrecoverable SSA overpayments from federal and state payments due the overpaid person.",
+            "links": []
+          },
+
+          "GN_02201.031_D_3": {
+            "header": "Request for waiver",
+            "text": "Follow instructions in GN 02201.030 D.2.",
+            "links": ["GN_02201.030_D_2"]
+          },
+
+          "GN_02201.031_D_4": {
+            "header": "Request to review record",
+            "text": "Follow instructions in GN 02201.030 D.3.",
+            "links": ["GN_02201.030_D_3"]
+          },
+
+          "GN_02201.031_D_5": {
+            "header": "Request for installment payments",
+            "text": "Follow instructions in GN 02201.030 D.4.",
+            "links": ["GN_02201.030_D_4"]
+          },
+
+          "GN_02201.031_D_6": {
+            "header": "Debtor objects to collection of debt",
+            "subsections": {
+              "GN_02201.031_D_6_a": {
+                "header": "Debtor objects to SSA's determination that the debt is past due and legally enforceable and an External Collections review is requested",
+                "text": "Follow instructions in GN 02201.030 D.5.a.",
+                "links": ["GN_02201.030_D_5_a"]
+              },
+              "GN_02201.031_D_6_b": {
+                "header": "Debtor protests the fact or amount of debt",
+                "text": "Follow instructions in GN 02201.030 D.5.b.",
+                "links": ["GN_02201.030_D_5_b"]
+              }
+            }
+          },
+
+          "GN_02201.031_D_7": {
+            "header": "Debtor alleges non-receipt of overpayment",
+            "text": "Follow instructions in GN 02201.030 D.6.",
+            "links": ["GN_02201.030_D_6"]
+          },
+
+          "GN_02201.031_D_8": {
+            "header": "Debtor makes a compromise offer",
+            "text": "Follow the instructions in GN 02215.100 through GN 02215.125. If SSA agrees to the offer, stress that payment must be received by us before the 60 day process period expires or we will report the debt to TOP.",
+            "links": ["GN_02215.100", "GN_02215.125"]
+          },
+
+          "GN_02201.031_D_9": {
+            "header": "Debtor alleges non-receipt of initial overpayment notice",
+            "text": "Follow the instructions in GN 02201.030 D.8.",
+            "links": ["GN_02201.030_D_8"]
+          },
+
+          "GN_02201.031_D_10": {
+            "header": "Report of death",
+            "text": "Follow the instructions in GN 02201.030 D.9.",
+            "links": ["GN_02201.030_D_9"]
+          },
+
+          "GN_02201.031_D_11": {
+            "header": "Report of bankruptcy action",
+            "text": "Follow instructions in GN 02201.030 D.10.",
+            "links": ["GN_02201.030_D_10"]
+          }
+        }
+      },
+
+      "GN_02201.031_E": {
+        "header": "How must post offset and post certification inquiries be handled?",
+        "text": "SSA will receive some inquiries after certification of cases to Treasury or after actual offset has occurred. In many of these cases, the debtor simply failed to contact us to resolve the repayment issue as specified in the preoffset notice. There are other situations, however, where certification to Treasury may have been incorrect.",
+        "subsections": {
+
+          "GN_02201.031_E_1": {
+            "header": "Allegation of pending protest or waiver request",
+            "text": "Follow instructions in GN 02201.030 E.1.",
+            "links": ["GN_02201.030_E_1"]
+          },
+
+          "GN_02201.031_E_2": {
+            "header": "Request for waiver",
+            "text": "Follow instructions in GN 02201.030 E.2.",
+            "links": ["GN_02201.030_E_2"]
+          },
+
+          "GN_02201.031_E_3": {
+            "header": "Request for installment payments",
+            "text": "Follow instructions in GN 02201.030 E.3.",
+            "links": ["GN_02201.030_E_3"]
+          },
+
+          "GN_02201.031_E_4": {
+            "header": "Excess collection",
+            "text": "Follow instructions in GN 02201.030 E.4.",
+            "links": ["GN_02201.030_E_4"]
+          },
+
+          "GN_02201.031_E_5": {
+            "header": "Erroneous offset due to incorrect BOAN",
+            "text": "Follow instructions in GN 02201.030 E.5.",
+            "links": ["GN_02201.030_E_5"]
+          },
+
+          "GN_02201.031_E_6": {
+            "header": "Alleged non-receipt of pre-offset notice",
+            "text": "Follow instructions in GN 02201.030 G.2.",
+            "links": ["GN_02201.030_G_2"]
+          }
+        }
+      }
+    }
+  }
+}

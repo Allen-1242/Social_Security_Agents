@@ -1,0 +1,174 @@
+@prefix gov: <http://example.org/gov/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssa: <http://example.org/ssa/> .
+
+gov:1_F a owl:NamedIndividual ;
+    rdfs:label "1)(F" ;
+    skos:prefLabel "1)(F" .
+
+gov:202_SOCIAL_SECURITY_ACT a owl:NamedIndividual ;
+    rdfs:label "202 SOCIAL SECURITY ACT" ;
+    skos:altLabel "Sec. 202 SOCIAL SECURITY ACT",
+        "Sec. 202 SOCIAL SECURITY ACT cation" ;
+    skos:prefLabel "202 SOCIAL SECURITY ACT" .
+
+gov:21_Sec a owl:NamedIndividual ;
+    rdfs:label "21 Sec" ;
+    skos:altLabel "24 Sec",
+        "27 Sec" ;
+    skos:prefLabel "21 Sec" .
+
+gov:A a owl:NamedIndividual ;
+    rdfs:label "(4)(A",
+        "(9)(A",
+        "— (A" ;
+    skos:prefLabel "(4)(A",
+        "(9)(A",
+        "— (A" .
+
+gov:A_child a owl:NamedIndividual ;
+    rdfs:label "(6) A child",
+        "A child" ;
+    skos:prefLabel "(6) A child",
+        "A child" .
+
+gov:A_husband_s_insurance_benefit a owl:NamedIndividual ;
+    rdfs:label "A husband’s insurance benefit" ;
+    skos:prefLabel "A husband’s insurance benefit" .
+
+gov:Amended a owl:NamedIndividual ;
+    rdfs:label "Amended" ;
+    skos:prefLabel "Amended" .
+
+gov:An_elementary_or_secondary_school a owl:NamedIndividual ;
+    rdfs:label "An ‘‘elementary or secondary school" ;
+    skos:prefLabel "An ‘‘elementary or secondary school" .
+
+gov:An_individual a owl:NamedIndividual ;
+    rdfs:label "An individual" ;
+    skos:prefLabel "An individual" .
+
+gov:B a owl:NamedIndividual ;
+    rdfs:label "(1)(B" ;
+    skos:prefLabel "(1)(B" .
+
+gov:B_i a owl:NamedIndividual ;
+    rdfs:label "B)(i" ;
+    skos:altLabel "(C)(i",
+        "A)(i" ;
+    skos:prefLabel "B)(i" .
+
+gov:C a owl:NamedIndividual ;
+    rdfs:label ": (C" ;
+    skos:prefLabel ": (C" .
+
+gov:Child_s_Insurance_Benefits a owl:NamedIndividual ;
+    rdfs:label "Child’s Insurance Benefits" ;
+    skos:altLabel "(2) Such child’s insurance benefit",
+        "Such child’s insurance benefit" ;
+    skos:prefLabel "Child’s Insurance Benefits" .
+
+gov:Enacted a owl:NamedIndividual ;
+    rdfs:label "Enacted" ;
+    skos:prefLabel "Enacted" .
+
+gov:Enacted_February a owl:NamedIndividual ;
+    rdfs:label ", Enacted February" ;
+    skos:prefLabel ", Enacted February" .
+
+gov:Entitlement a owl:NamedIndividual ;
+    rdfs:label "Entitlement" ;
+    skos:prefLabel "Entitlement" .
+
+gov:Every_child a owl:NamedIndividual ;
+    rdfs:label "Every child" ;
+    skos:prefLabel "Every child" .
+
+gov:I a owl:NamedIndividual ;
+    rdfs:label ", (I" ;
+    skos:prefLabel ", (I" .
+
+gov:III a owl:NamedIndividual ;
+    rdfs:label "(III" ;
+    skos:prefLabel "(III" .
+
+gov:No_payment a owl:NamedIndividual ;
+    rdfs:label "No payment" ;
+    skos:prefLabel "No payment" .
+
+gov:P_L a owl:NamedIndividual ;
+    rdfs:label "P.L." ;
+    skos:prefLabel "P.L." .
+
+gov:Social_Security a owl:NamedIndividual ;
+    rdfs:label "Social Security" ;
+    skos:prefLabel "Social Security" .
+
+gov:Such_re a owl:NamedIndividual ;
+    rdfs:label "Such re" ;
+    skos:prefLabel "Such re" .
+
+gov:The_widow a owl:NamedIndividual ;
+    rdfs:label "The widow" ;
+    skos:prefLabel "The widow" .
+
+gov:The_wife a owl:NamedIndividual ;
+    rdfs:label "The wife" ;
+    skos:altLabel "The husband" ;
+    skos:prefLabel "The wife" .
+
+gov:Widow_s_Insurance_Benefits a owl:NamedIndividual ;
+    rdfs:label "Widow’s Insurance Benefits" ;
+    skos:prefLabel "Widow’s Insurance Benefits" .
+
+gov:Wife_s_Insurance_Benefits a owl:NamedIndividual ;
+    rdfs:label "Wife’s Insurance Benefits" ;
+    skos:altLabel "A wife’s insurance benefit",
+        "Husband’s Insurance Benefits" ;
+    skos:prefLabel "Wife’s Insurance Benefits" .
+
+gov:i a owl:NamedIndividual ;
+    rdfs:label "(D)(i" ;
+    skos:prefLabel "(D)(i" .
+
+gov:paragraph_D a owl:NamedIndividual ;
+    rdfs:label "paragraph (1)(D" ;
+    skos:prefLabel "paragraph (1)(D" .
+
+gov:sub_paragraph_E a owl:NamedIndividual ;
+    rdfs:label "sub-paragraph (E" ;
+    skos:prefLabel "sub-paragraph (E" .
+
+gov:subparagraph_A a owl:NamedIndividual ;
+    rdfs:label "subparagraph (A" ;
+    skos:prefLabel "subparagraph (A" .
+
+gov:such_indi_vidual_C a owl:NamedIndividual ;
+    rdfs:label "such indi-vidual, (C" ;
+    skos:prefLabel "such indi-vidual, (C" .
+
+gov:the_Com_missioner a owl:NamedIndividual ;
+    rdfs:label "the Com-missioner" ;
+    skos:prefLabel "the Com-missioner" .
+
+gov:the_Commis_sioner a owl:NamedIndividual ;
+    rdfs:label "the Commis-sioner" ;
+    skos:prefLabel "the Commis-sioner" .
+
+gov:the_Commissioner a owl:NamedIndividual ;
+    rdfs:label "the Commissioner" ;
+    skos:prefLabel "the Commissioner" .
+
+gov:the_State a owl:NamedIndividual ;
+    rdfs:label "the State" ;
+    skos:prefLabel "the State" .
+
+gov:the_United_States a owl:NamedIndividual ;
+    rdfs:label "the United States" ;
+    skos:prefLabel "the United States" .
+
+ssa:ontology a owl:Ontology ;
+    rdfs:label "Social Security Act Ontology" .
+

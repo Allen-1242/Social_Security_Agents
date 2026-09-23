@@ -1,0 +1,335 @@
+@prefix ssa:  <http://example.org/ssa/> .
+@prefix gov:  <http://example.org/gov/> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# ═══════════════════════════════════════════════════════════
+# Source Document
+# ═══════════════════════════════════════════════════════════
+
+ssa:SocialSecurityAct a ssa:Statute ;
+    rdfs:label "Social Security Act" ;
+    dct:identifier "42 U.S.C. Chapter 7" ;
+    ssa:amendedThrough "P.L. 119-77" ;
+    dct:modified "2026-02-10"^^xsd:date .
+
+# ═══════════════════════════════════════════════════════════
+# Title II
+# ═══════════════════════════════════════════════════════════
+
+ssa:TitleII a ssa:Title ;
+    rdfs:label "Title II — Federal Old-Age, Survivors, and Disability Insurance Benefits" ;
+    ssa:titleNumber "II" ;
+    ssa:parent ssa:SocialSecurityAct ;
+    ssa:hasSection ssa:Section202 .
+
+# ═══════════════════════════════════════════════════════════
+# Section 202 — Top Level
+# ═══════════════════════════════════════════════════════════
+
+ssa:Section202 a ssa:Section ;
+    rdfs:label "Old-Age and Survivors Insurance Benefit Payments" ;
+    ssa:sectionCode "Sec. 202" ;
+    ssa:parent ssa:TitleII ;
+    ssa:pageRange "20-30" ;
+    ssa:amendedThrough "P.L. 119-77" ;
+    dct:modified "2026-02-10"^^xsd:date ;
+    ssa:hasSubsection ssa:Section202a ,
+        ssa:Section202b ,
+        ssa:Section202c ,
+        ssa:Section202d ,
+        ssa:Section202e ,
+        ssa:Section202q .
+
+# ═══════════════════════════════════════════════════════════
+# Subsection (a) — Old-Age Insurance Benefits
+# ═══════════════════════════════════════════════════════════
+
+ssa:Section202a a ssa:Subsection ;
+    rdfs:label "Old-Age Insurance Benefits" ;
+    ssa:subsectionCode "202(a)" ;
+    ssa:parent ssa:Section202 ;
+    ssa:pageStart 21 ;
+    ssa:crossReferences ssa:Section215a ,
+        ssa:Section214 .
+
+# ═══════════════════════════════════════════════════════════
+# Subsection (b) — Wife's Insurance Benefits
+# ═══════════════════════════════════════════════════════════
+
+ssa:Section202b a ssa:Subsection ;
+    rdfs:label "Wife's Insurance Benefits" ;
+    ssa:subsectionCode "202(b)" ;
+    ssa:parent ssa:Section202 ;
+    ssa:pageStart 21 ;
+    ssa:pageEnd 22 ;
+    ssa:hasParagraph ssa:Section202b1 ,
+        ssa:Section202b2 ,
+        ssa:Section202b3 ,
+        ssa:Section202b4 ;
+    ssa:crossReferences ssa:Section216b ,
+        ssa:Section216d ,
+        ssa:Section216l ,
+        ssa:Section214 ,
+        ssa:Section202q .
+
+ssa:Section202b1 a ssa:Paragraph ;
+    rdfs:label "Wife's Insurance Benefits — Eligibility" ;
+    ssa:paragraphCode "202(b)(1)" ;
+    ssa:parent ssa:Section202b ;
+    ssa:hasClause ssa:Section202b1A ,
+        ssa:Section202b1B ,
+        ssa:Section202b1C ,
+        ssa:Section202b1D .
+
+ssa:Section202b1A a ssa:Clause ;
+    rdfs:label "Application filing requirement" ;
+    ssa:clauseCode "202(b)(1)(A)" ;
+    ssa:parent ssa:Section202b1 .
+
+ssa:Section202b1B a ssa:Clause ;
+    rdfs:label "Age or child-in-care requirement" ;
+    ssa:clauseCode "202(b)(1)(B)" ;
+    ssa:parent ssa:Section202b1 .
+
+ssa:Section202b1C a ssa:Clause ;
+    rdfs:label "Divorced wife not married requirement" ;
+    ssa:clauseCode "202(b)(1)(C)" ;
+    ssa:parent ssa:Section202b1 .
+
+ssa:Section202b1D a ssa:Clause ;
+    rdfs:label "Not entitled to equal or greater benefit" ;
+    ssa:clauseCode "202(b)(1)(D)" ;
+    ssa:parent ssa:Section202b1 .
+
+ssa:Section202b2 a ssa:Paragraph ;
+    rdfs:label "Wife's benefit amount" ;
+    ssa:paragraphCode "202(b)(2)" ;
+    ssa:parent ssa:Section202b .
+
+ssa:Section202b3 a ssa:Paragraph ;
+    rdfs:label "Divorced wife remarriage exception" ;
+    ssa:paragraphCode "202(b)(3)" ;
+    ssa:parent ssa:Section202b .
+
+ssa:Section202b4 a ssa:Paragraph ;
+    rdfs:label "Divorced wife of unentitled but insured individual" ;
+    ssa:paragraphCode "202(b)(4)" ;
+    ssa:parent ssa:Section202b ;
+    ssa:crossReferences ssa:Section214 .
+
+# ═══════════════════════════════════════════════════════════
+# Subsection (c) — Husband's Insurance Benefits
+# ═══════════════════════════════════════════════════════════
+
+ssa:Section202c a ssa:Subsection ;
+    rdfs:label "Husband's Insurance Benefits" ;
+    ssa:subsectionCode "202(c)" ;
+    ssa:parent ssa:Section202 ;
+    ssa:pageStart 22 ;
+    ssa:pageEnd 24 ;
+    ssa:hasParagraph ssa:Section202c1 ,
+        ssa:Section202c2 ,
+        ssa:Section202c3 ,
+        ssa:Section202c4 ;
+    ssa:crossReferences ssa:Section216f ,
+        ssa:Section216d ,
+        ssa:Section216l ,
+        ssa:Section214 ,
+        ssa:Section202q .
+
+ssa:Section202c1 a ssa:Paragraph ;
+    rdfs:label "Husband's Insurance Benefits — Eligibility" ;
+    ssa:paragraphCode "202(c)(1)" ;
+    ssa:parent ssa:Section202c .
+
+ssa:Section202c2 a ssa:Paragraph ;
+    rdfs:label "Husband's benefit amount" ;
+    ssa:paragraphCode "202(c)(2)" ;
+    ssa:parent ssa:Section202c .
+
+ssa:Section202c3 a ssa:Paragraph ;
+    rdfs:label "Divorced husband remarriage exception" ;
+    ssa:paragraphCode "202(c)(3)" ;
+    ssa:parent ssa:Section202c .
+
+ssa:Section202c4 a ssa:Paragraph ;
+    rdfs:label "Divorced husband of unentitled but insured individual" ;
+    ssa:paragraphCode "202(c)(4)" ;
+    ssa:parent ssa:Section202c .
+
+# ═══════════════════════════════════════════════════════════
+# Subsection (d) — Child's Insurance Benefits
+# ═══════════════════════════════════════════════════════════
+
+ssa:Section202d a ssa:Subsection ;
+    rdfs:label "Child's Insurance Benefits" ;
+    ssa:subsectionCode "202(d)" ;
+    ssa:parent ssa:Section202 ;
+    ssa:pageStart 24 ;
+    ssa:pageEnd 29 ;
+    ssa:hasParagraph ssa:Section202d1 ,
+        ssa:Section202d2 ,
+        ssa:Section202d3 ,
+        ssa:Section202d4 ,
+        ssa:Section202d5 ,
+        ssa:Section202d6 ,
+        ssa:Section202d7 ,
+        ssa:Section202d8 ,
+        ssa:Section202d9 ,
+        ssa:Section202d10 ;
+    ssa:crossReferences ssa:Section216e ,
+        ssa:Section223d ,
+        ssa:Section222c4A ,
+        ssa:Section216h2B ,
+        ssa:Section216h3 .
+
+ssa:Section202d1 a ssa:Paragraph ;
+    rdfs:label "Child's Insurance Benefits — Eligibility" ;
+    ssa:paragraphCode "202(d)(1)" ;
+    ssa:parent ssa:Section202d .
+
+ssa:Section202d2 a ssa:Paragraph ;
+    rdfs:label "Child's benefit amount" ;
+    ssa:paragraphCode "202(d)(2)" ;
+    ssa:parent ssa:Section202d .
+
+ssa:Section202d3 a ssa:Paragraph ;
+    rdfs:label "Dependency on parent" ;
+    ssa:paragraphCode "202(d)(3)" ;
+    ssa:parent ssa:Section202d .
+
+ssa:Section202d4 a ssa:Paragraph ;
+    rdfs:label "Dependency on stepparent" ;
+    ssa:paragraphCode "202(d)(4)" ;
+    ssa:parent ssa:Section202d .
+
+ssa:Section202d5 a ssa:Paragraph ;
+    rdfs:label "Child marriage exception" ;
+    ssa:paragraphCode "202(d)(5)" ;
+    ssa:parent ssa:Section202d ;
+    ssa:crossReferences ssa:Section223a .
+
+ssa:Section202d6 a ssa:Paragraph ;
+    rdfs:label "Reentitlement after age 18" ;
+    ssa:paragraphCode "202(d)(6)" ;
+    ssa:parent ssa:Section202d .
+
+ssa:Section202d7 a ssa:Paragraph ;
+    rdfs:label "Full-time student definitions" ;
+    ssa:paragraphCode "202(d)(7)" ;
+    ssa:parent ssa:Section202d .
+
+ssa:Section202d8 a ssa:Paragraph ;
+    rdfs:label "Adopted child after entitlement" ;
+    ssa:paragraphCode "202(d)(8)" ;
+    ssa:parent ssa:Section202d .
+
+ssa:Section202d9 a ssa:Paragraph ;
+    rdfs:label "Non-natural child dependency" ;
+    ssa:paragraphCode "202(d)(9)" ;
+    ssa:parent ssa:Section202d .
+
+ssa:Section202d10 a ssa:Paragraph ;
+    rdfs:label "Stepparent notification requirements" ;
+    ssa:paragraphCode "202(d)(10)" ;
+    ssa:parent ssa:Section202d .
+
+# ═══════════════════════════════════════════════════════════
+# Subsection (e) — Widow's Insurance Benefits
+# ═══════════════════════════════════════════════════════════
+
+ssa:Section202e a ssa:Subsection ;
+    rdfs:label "Widow's Insurance Benefits" ;
+    ssa:subsectionCode "202(e)" ;
+    ssa:parent ssa:Section202 ;
+    ssa:pageStart 29 ;
+    ssa:pageEnd 30 ;
+    ssa:hasParagraph ssa:Section202e1 ;
+    ssa:crossReferences ssa:Section216c ,
+        ssa:Section216d ,
+        ssa:Section216l ,
+        ssa:Section223d ,
+        ssa:Section223 ,
+        ssa:Section222c4A .
+
+ssa:Section202e1 a ssa:Paragraph ;
+    rdfs:label "Widow's Insurance Benefits — Eligibility" ;
+    ssa:paragraphCode "202(e)(1)" ;
+    ssa:parent ssa:Section202e .
+
+# ═══════════════════════════════════════════════════════════
+# Subsection (q) — Reduction of Benefits
+# ═══════════════════════════════════════════════════════════
+
+ssa:Section202q a ssa:Subsection ;
+    rdfs:label "Reduction of Benefit Amounts" ;
+    ssa:subsectionCode "202(q)" ;
+    ssa:parent ssa:Section202 .
+
+# ═══════════════════════════════════════════════════════════
+# Cross-Referenced Sections (stubs)
+# ═══════════════════════════════════════════════════════════
+
+ssa:Section214 a ssa:Section ;
+    rdfs:label "Insured Status" ;
+    ssa:sectionCode "Sec. 214" .
+
+ssa:Section215a a ssa:Subsection ;
+    rdfs:label "Primary Insurance Amount" ;
+    ssa:subsectionCode "215(a)" .
+
+ssa:Section216b a ssa:Subsection ;
+    rdfs:label "Definition of Wife" ;
+    ssa:subsectionCode "216(b)" .
+
+ssa:Section216c a ssa:Subsection ;
+    rdfs:label "Definition of Widow" ;
+    ssa:subsectionCode "216(c)" .
+
+ssa:Section216d a ssa:Subsection ;
+    rdfs:label "Definition of Divorced Wife / Divorced Husband" ;
+    ssa:subsectionCode "216(d)" .
+
+ssa:Section216e a ssa:Subsection ;
+    rdfs:label "Definition of Child" ;
+    ssa:subsectionCode "216(e)" .
+
+ssa:Section216f a ssa:Subsection ;
+    rdfs:label "Definition of Husband" ;
+    ssa:subsectionCode "216(f)" .
+
+ssa:Section216l a ssa:Subsection ;
+    rdfs:label "Definition of Retirement Age" ;
+    ssa:subsectionCode "216(l)" .
+
+ssa:Section216h2B a ssa:Clause ;
+    rdfs:label "Child status determination" ;
+    ssa:clauseCode "216(h)(2)(B)" .
+
+ssa:Section216h3 a ssa:Paragraph ;
+    rdfs:label "Child status determination (alternative)" ;
+    ssa:paragraphCode "216(h)(3)" .
+
+ssa:Section222c4A a ssa:Clause ;
+    rdfs:label "Trial work period determination" ;
+    ssa:clauseCode "222(c)(4)(A)" .
+
+ssa:Section223 a ssa:Section ;
+    rdfs:label "Disability Insurance Benefits" ;
+    ssa:sectionCode "Sec. 223" .
+
+ssa:Section223a a ssa:Subsection ;
+    rdfs:label "Disability Insurance Benefits — Eligibility" ;
+    ssa:subsectionCode "223(a)" .
+
+ssa:Section223d a ssa:Subsection ;
+    rdfs:label "Definition of Disability" ;
+    ssa:subsectionCode "223(d)" .
+
+ssa:Section223e a ssa:Subsection ;
+    rdfs:label "Disability cessation provisions" ;
+    ssa:subsectionCode "223(e)" .

@@ -1,0 +1,128 @@
+@prefix ssa: <http://example.org/ssa/> .
+@prefix gov: <http://example.org/gov/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# === Benefit Types ===
+
+ssa:WifeInsuranceBenefits a owl:Class ;
+    rdfs:label "Wife's Insurance Benefits" ;
+    ssa:definedIn ssa:Section202b ;
+    ssa:benefitAmount "one-half of the primary insurance amount of her husband" .
+
+ssa:HusbandInsuranceBenefits a owl:Class ;
+    rdfs:label "Husband's Insurance Benefits" ;
+    ssa:definedIn ssa:Section202c ;
+    ssa:benefitAmount "one-half of the primary insurance amount of his wife" .
+
+ssa:ChildInsuranceBenefits a owl:Class ;
+    rdfs:label "Child's Insurance Benefits" ;
+    ssa:definedIn ssa:Section202d ;
+    ssa:benefitAmount_livingParent "one-half of the primary insurance amount" ;
+    ssa:benefitAmount_deceasedParent "three-fourths of the primary insurance amount" .
+
+ssa:WidowInsuranceBenefits a owl:Class ;
+    rdfs:label "Widow's Insurance Benefits" ;
+    ssa:definedIn ssa:Section202e .
+
+ssa:OldAgeInsuranceBenefits a owl:Class ;
+    rdfs:label "Old-Age Insurance Benefits" ;
+    ssa:benefitAmount "primary insurance amount as defined in section 215(a)" .
+
+ssa:DisabilityInsuranceBenefits a owl:Class ;
+    rdfs:label "Disability Insurance Benefits" .
+
+# === Eligibility Conditions ===
+
+ssa:WifeInsuranceBenefits
+    ssa:requiresApplicationFiling true ;
+    ssa:requiresAge "62 or has child in care" ;
+    ssa:requiresMarriageDuration "10 years for divorced wife" ;
+    ssa:subjectToReduction ssa:Subsection_q .
+
+ssa:HusbandInsuranceBenefits
+    ssa:requiresApplicationFiling true ;
+    ssa:requiresAge "62 or has child in care" ;
+    ssa:requiresMarriageDuration "10 years for divorced husband" ;
+    ssa:subjectToReduction ssa:Subsection_q .
+
+ssa:ChildInsuranceBenefits
+    ssa:requiresApplicationFiling true ;
+    ssa:requiresUnmarried true ;
+    ssa:requiresAge "under 18, or under 19 if full-time student, or under 22 if disabled" ;
+    ssa:requiresDependency true .
+
+ssa:WidowInsuranceBenefits
+    ssa:requiresNotMarried true ;
+    ssa:requiresAge "60, or 50 if disabled" ;
+    ssa:requiresDecedent "fully insured individual" .
+
+# === Termination Events ===
+
+ssa:WifeInsuranceBenefits
+    ssa:terminatesOn "death of wife" ;
+    ssa:terminatesOn "death of insured individual" ;
+    ssa:terminatesOn "divorce before age 62 or under 10 years marriage" ;
+    ssa:terminatesOn "remarriage (divorced wife)" ;
+    ssa:terminatesOn "entitled to equal or greater old-age or disability benefit" ;
+    ssa:terminatesOn "insured individual loses entitlement" .
+
+ssa:ChildInsuranceBenefits
+    ssa:terminatesOn "death or marriage of child" ;
+    ssa:terminatesOn "child attains age 18 (unless disabled or student)" ;
+    ssa:terminatesOn "child attains age 19 (if student)" ;
+    ssa:terminatesOn "disability ceases (termination month)" .
+
+# === Entities ===
+
+gov:CommissionerOfSocialSecurity a owl:NamedIndividual ;
+    rdfs:label "Commissioner of Social Security" ;
+    ssa:prescribesRegulations ssa:WifeInsuranceBenefits ;
+    ssa:prescribesRegulations ssa:HusbandInsuranceBenefits ;
+    ssa:determinesStudentStatus ssa:FullTimeStudent .
+
+gov:UnitedStates a owl:NamedIndividual ;
+    rdfs:label "the United States" .
+
+# === Definitions ===
+
+ssa:Wife ssa:definedIn ssa:Section216b .
+ssa:DivorcedWife ssa:definedIn ssa:Section216d .
+ssa:Husband ssa:definedIn ssa:Section216f .
+ssa:DivorcedHusband ssa:definedIn ssa:Section216d .
+ssa:Child ssa:definedIn ssa:Section216e .
+ssa:Widow ssa:definedIn ssa:Section216c .
+ssa:FullyInsuredIndividual ssa:definedIn ssa:Section214 .
+ssa:Disability ssa:definedIn ssa:Section223d .
+ssa:RetirementAge ssa:definedIn ssa:Section216l .
+ssa:PrimaryInsuranceAmount ssa:definedIn ssa:Section215a .
+
+ssa:FullTimeStudent a owl:Class ;
+    rdfs:label "Full-time elementary or secondary school student" ;
+    ssa:excludes "individual confined in penal institution for felony" ;
+    ssa:excludes "individual paid by employer to attend school" ;
+    ssa:nonattendancePeriod "4 calendar months or less" .
+
+ssa:ElementaryOrSecondarySchool a owl:Class ;
+    rdfs:label "Elementary or secondary school" ;
+    ssa:determinedBy "law of the State or jurisdiction in which it is located" ;
+    ssa:excludes "education beyond grade 12" .
+
+# === Dependency Rules ===
+
+ssa:ChildDependency
+    ssa:deemedDependentOn "father, adopting father, mother, or adopting mother" ;
+    ssa:unlessCriteria "not living with or contributing to support AND child is neither legitimate nor adopted, or adopted by another" .
+
+ssa:StepchildDependency
+    ssa:requiresSupport "at least one-half of support from stepparent" .
+
+# === Notification Requirements ===
+
+gov:Stepparent
+    ssa:mustNotify gov:CommissionerOfSocialSecurity ;
+    ssa:notificationTrigger "divorce becoming final" .
+
+gov:CommissionerOfSocialSecurity
+    ssa:mustAnnuallyNotify gov:Stepparent ;
+    ssa:notificationContent "rule for termination and notification requirement" .

@@ -1,0 +1,133 @@
+[
+  "GN_02201.031_A_3": {
+    "law_text": 
+    "Administrative Offset may be used to recover Title II overpayments when all of the following criteria are met: 
+    (a) the debtor was aged 18 or older when the overpayment debt was incurred; 
+    (b) the debt is unrecoverable under the Commissioner's regulations; 
+    (c) the debtor is no longer entitled to Social Security benefits; 
+    (d) the debtor must be alive; 
+    example: Print("Helo")
+    (e) the Beneficiary Own Account Number (BOAN) must be on the Master Beneficiary Record (MBR); #It will check the BOAN wo checking the master file 
+    (f) the outstanding debt amount is at least $25.00; (g) the debt must be delinquent as defined in GN 02201.030 B.2. Administrative Offset excludes BIC C debtors for payments other than Tax Refund Offset (TRO)."
+    "node": "offset_eligible",
+
+    (g) Applicant did their best to give documentation
+    z3: IF(didtheirbest > True)
+    "compose": "AND",
+    
+    "subject": "Administrative Offset",
+          "predicate": "requiresCriterion",
+          "object": "debtor aged 18 or older when debt incurred" (debtor_age_at_debt),
+          "object_type": "literal",
+          "criterion_id": "a"
+    "rules": [
+      {
+        "criterion_id": "a",
+        "law": "The debtor was aged 18 or older when the debt was incurred",
+        "z3": "debtor_age_at_debt >= 18" #Predicate
+      },
+      {
+        "criterion_id": "b",
+        "law": "The debt is unrecoverable under Commissioner regulations",
+        "z3": "debt_unrecoverable == True",
+        "resolves_to": "GN_02201.031_B_1"
+      },
+      {
+        "criterion_id": "c",
+        "law": "The debtor is no longer entitled to Social Security benefits",
+        "z3": "debtor_entitled == False"
+      },
+      {
+        "criterion_id": "d",
+        "law": "The debtor must be alive",
+        "z3": "debtor_alive == True"
+      },
+      {
+        "criterion_id": "e",
+        "law": "The BOAN must be on the Master Beneficiary Record",
+        "z3": "boan_on_mbr == True"
+      },
+      {
+        "criterion_id": "f",
+        "law": "The debt amount is at least $25.00",
+        "z3": "debt_amount >= 25.00"
+      },
+      {
+        "criterion_id": "g",
+        "law": "The debt must be delinquent",
+        "z3": "debt_delinquent == True",
+        "resolves_to": "GN_02201.030_B_2"
+      },
+      {
+        "criterion_id": "h",
+        "law": "Excludes BIC C debtors for payments other than TRO",
+        "z3": "Not(And(debtor_type == StringVal('BIC_C'), payment_type != StringVal('TRO')))"
+      }
+    ]
+  },
+  "GN_02201.031_A_2": {
+    "law_text": "Administrative Offset is the reduction or withholding of federal or state payments to a person to recover a 
+    delinquent debt owed by that person to the federal government. 
+    Various federal and state payments, such as travel, 
+    expense reimbursements, Office of Personnel Management (OPM) pensions, and federal contractor payments, as well as eligible state payments, 
+    which include state income tax refunds, are subject to Administrative Offset to recover certain Title II debts. OPM pensions are subject to a reduction of up to 25% of the net payment. 
+    Vendor payments such as federal contractor payments and travel and expense reimbursements are subject to a reduction of up to 100% of the net payment.",
+    "node": "max_offset_rate",
+    "compose": "IF_ELSE",
+    "rules": [
+      {
+        "criterion_id": "a",
+        "law": "OPM pensions are subject to a reduction of up to 25% of the net payment",
+        "z3": "Implies(payment_type == StringVal('OPM_PENSION'), offset_rate <= 0.25)"
+      },
+      {
+        "criterion_id": "b",
+        "law": "Federal contractor payments are subject to a reduction of up to 100% of the net payment",
+        "z3": "Implies(payment_type == StringVal('FEDERAL_CONTRACTOR'), offset_rate <= 1.00)"
+      },
+      {
+        "criterion_id": "c",
+        "law": "Travel and expense reimbursements are subject to a reduction of up to 100% of the net payment",
+        "z3": "Implies(payment_type == StringVal('TRAVEL_EXPENSE'), offset_rate <= 1.00)"
+      },
+      {
+        "criterion_id": "d",
+        "law": "State income tax refunds are subject to Administrative Offset",
+        "z3": "Implies(payment_type == StringVal('STATE_TAX_REFUND'), payment_eligible == True)"
+      }
+    ],
+    "note": "For Title XVI debts collected by administrative offset of Federal payments, see SI 02220.013.",
+    "resolves_to": "SI_02220.013"
+  }, 
+  {
+  "GN_02201.031_C": {
+    "law_text": "Before referring a debt for Administrative Offset, SSA must send a pre-offset notice to the debtor informing them that: they owe a delinquent overpayment debt in a particular amount; SSA plans to refer the debt to Treasury for TOP and if applicable conduct administrative wage garnishment, and send information about the debt to credit bureaus after 60 days have expired from the date on the notice; SSA will not take this action if, before the end of that 60-day period, the debtor pays the debt in full, makes regular installment payments under an agreement with SSA, requests waiver, or furnishes evidence showing that they do not owe all or part of the stated amount or SSA does not have the right to collect the debt; and the debtor may review and copy SSA's records about the debt.",
+    "node": "valid_notice_sent",
+    "compose": "AND",
+    "rules": [
+      {
+        "criterion_id": "a",
+        "law": "Notice informs debtor they owe a delinquent overpayment debt in a particular amount",
+        "z3": "notice_includes_debt_amount == True"
+      },
+      {
+        "criterion_id": "b",
+        "law": "Notice informs debtor that SSA plans to refer the debt to Treasury for TOP after 60 days",
+        "z3": "notice_includes_referral_intent == True"
+      },
+      {
+        "criterion_id": "c",
+        "law": "Notice informs debtor that SSA will not take action if within 60 days debtor pays in full, arranges installments, requests waiver, or furnishes evidence",
+        "z3": "notice_includes_60day_rights == True"
+      },
+      {
+        "criterion_id": "d",
+        "law": "Notice informs debtor of right to review and copy SSA records about the debt",
+        "z3": "notice_includes_record_access == True"
+      }
+    ]
+  }
+}
+
+]
+

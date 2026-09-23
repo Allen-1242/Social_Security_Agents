@@ -1,0 +1,175 @@
+@prefix ssa:  <http://example.org/ssa/> .
+@prefix gov:  <http://example.org/gov/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# ═══════════════════════════════════════════════════════════
+# Benefit Types
+# ═══════════════════════════════════════════════════════════
+
+ssa:OldAgeInsuranceBenefits a owl:Class ;
+    rdfs:label "Old-Age Insurance Benefits" ;
+    ssa:definedIn ssa:Section202a ;
+    prov:wasDerivedFrom ssa:Section202a ;
+    ssa:benefitAmount "primary insurance amount as defined in section 215(a)" .
+
+ssa:WifeInsuranceBenefits a owl:Class ;
+    rdfs:label "Wife's Insurance Benefits" ;
+    ssa:definedIn ssa:Section202b ;
+    prov:wasDerivedFrom ssa:Section202b ;
+    ssa:benefitAmount "one-half of the primary insurance amount of her husband" ;
+    ssa:requiresApplicationFiling true ;
+    ssa:requiresAge "62 or has child in care" ;
+    ssa:requiresMarriageDuration "10 years for divorced wife" ;
+    ssa:subjectToReduction ssa:Section202q .
+
+ssa:HusbandInsuranceBenefits a owl:Class ;
+    rdfs:label "Husband's Insurance Benefits" ;
+    ssa:definedIn ssa:Section202c ;
+    prov:wasDerivedFrom ssa:Section202c ;
+    ssa:benefitAmount "one-half of the primary insurance amount of his wife" ;
+    ssa:requiresApplicationFiling true ;
+    ssa:requiresAge "62 or has child in care" ;
+    ssa:requiresMarriageDuration "10 years for divorced husband" ;
+    ssa:subjectToReduction ssa:Section202q .
+
+ssa:ChildInsuranceBenefits a owl:Class ;
+    rdfs:label "Child's Insurance Benefits" ;
+    ssa:definedIn ssa:Section202d ;
+    prov:wasDerivedFrom ssa:Section202d ;
+    ssa:benefitAmount_livingParent "one-half of the primary insurance amount" ;
+    ssa:benefitAmount_deceasedParent "three-fourths of the primary insurance amount" ;
+    ssa:requiresApplicationFiling true ;
+    ssa:requiresUnmarried true ;
+    ssa:requiresAge "under 18, or under 19 if full-time student, or under 22 if disabled" ;
+    ssa:requiresDependency true .
+
+ssa:WidowInsuranceBenefits a owl:Class ;
+    rdfs:label "Widow's Insurance Benefits" ;
+    ssa:definedIn ssa:Section202e ;
+    prov:wasDerivedFrom ssa:Section202e ;
+    ssa:requiresNotMarried true ;
+    ssa:requiresAge "60, or 50 if disabled" ;
+    ssa:requiresDecedent "fully insured individual" .
+
+ssa:DisabilityInsuranceBenefits a owl:Class ;
+    rdfs:label "Disability Insurance Benefits" .
+
+# ═══════════════════════════════════════════════════════════
+# Termination Events
+# ═══════════════════════════════════════════════════════════
+
+ssa:WifeInsuranceBenefits
+    ssa:terminatesOn "death of wife" ,
+        "death of insured individual" ,
+        "divorce before age 62 or under 10 years marriage" ,
+        "remarriage (divorced wife)" ,
+        "entitled to equal or greater old-age or disability benefit" ,
+        "insured individual loses entitlement" ;
+    prov:wasDerivedFrom ssa:Section202b1 .
+
+ssa:ChildInsuranceBenefits
+    ssa:terminatesOn "death or marriage of child" ,
+        "child attains age 18 (unless disabled or student)" ,
+        "child attains age 19 (if student)" ,
+        "disability ceases (termination month)" ;
+    prov:wasDerivedFrom ssa:Section202d1 .
+
+# ═══════════════════════════════════════════════════════════
+# Entities
+# ═══════════════════════════════════════════════════════════
+
+gov:CommissionerOfSocialSecurity a owl:NamedIndividual ;
+    rdfs:label "Commissioner of Social Security" ;
+    ssa:prescribesRegulations ssa:WifeInsuranceBenefits ,
+        ssa:HusbandInsuranceBenefits ;
+    ssa:determinesStudentStatus ssa:FullTimeStudent ;
+    ssa:mustAnnuallyNotify gov:Stepparent ;
+    ssa:notificationContent "rule for termination and notification requirement" ;
+    prov:wasDerivedFrom ssa:Section202b4 ,
+        ssa:Section202d7 ,
+        ssa:Section202d10 .
+
+gov:UnitedStates a owl:NamedIndividual ;
+    rdfs:label "the United States" .
+
+gov:Stepparent a owl:NamedIndividual ;
+    rdfs:label "Stepparent" ;
+    ssa:mustNotify gov:CommissionerOfSocialSecurity ;
+    ssa:notificationTrigger "divorce becoming final" ;
+    prov:wasDerivedFrom ssa:Section202d10 .
+
+# ═══════════════════════════════════════════════════════════
+# Definitions (cross-references to defining sections)
+# ═══════════════════════════════════════════════════════════
+
+ssa:Wife a owl:Class ;
+    rdfs:label "Wife" ;
+    ssa:definedIn ssa:Section216b .
+
+ssa:DivorcedWife a owl:Class ;
+    rdfs:label "Divorced Wife" ;
+    ssa:definedIn ssa:Section216d .
+
+ssa:Husband a owl:Class ;
+    rdfs:label "Husband" ;
+    ssa:definedIn ssa:Section216f .
+
+ssa:DivorcedHusband a owl:Class ;
+    rdfs:label "Divorced Husband" ;
+    ssa:definedIn ssa:Section216d .
+
+ssa:Child a owl:Class ;
+    rdfs:label "Child" ;
+    ssa:definedIn ssa:Section216e .
+
+ssa:Widow a owl:Class ;
+    rdfs:label "Widow" ;
+    ssa:definedIn ssa:Section216c .
+
+ssa:FullyInsuredIndividual a owl:Class ;
+    rdfs:label "Fully Insured Individual" ;
+    ssa:definedIn ssa:Section214 .
+
+ssa:Disability a owl:Class ;
+    rdfs:label "Disability" ;
+    ssa:definedIn ssa:Section223d .
+
+ssa:RetirementAge a owl:Class ;
+    rdfs:label "Retirement Age" ;
+    ssa:definedIn ssa:Section216l .
+
+ssa:PrimaryInsuranceAmount a owl:Class ;
+    rdfs:label "Primary Insurance Amount" ;
+    ssa:definedIn ssa:Section215a .
+
+ssa:FullTimeStudent a owl:Class ;
+    rdfs:label "Full-time elementary or secondary school student" ;
+    ssa:excludes "individual confined in penal institution for felony" ,
+        "individual paid by employer to attend school" ;
+    ssa:nonattendancePeriod "4 calendar months or less" ;
+    prov:wasDerivedFrom ssa:Section202d7 .
+
+ssa:ElementaryOrSecondarySchool a owl:Class ;
+    rdfs:label "Elementary or secondary school" ;
+    ssa:determinedBy "law of the State or jurisdiction in which it is located" ;
+    ssa:excludes "education beyond grade 12" ;
+    prov:wasDerivedFrom ssa:Section202d7 .
+
+# ═══════════════════════════════════════════════════════════
+# Dependency Rules
+# ═══════════════════════════════════════════════════════════
+
+ssa:ChildDependency a ssa:DependencyRule ;
+    rdfs:label "Child dependency on parent" ;
+    ssa:deemedDependentOn "father, adopting father, mother, or adopting mother" ;
+    ssa:unlessCriteria "not living with or contributing to support AND child is neither legitimate nor adopted, or adopted by another" ;
+    prov:wasDerivedFrom ssa:Section202d3 .
+
+ssa:StepchildDependency a ssa:DependencyRule ;
+    rdfs:label "Child dependency on stepparent" ;
+    ssa:requiresSupport "at least one-half of support from stepparent" ;
+    prov:wasDerivedFrom ssa:Section202d4 .
